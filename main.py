@@ -40,8 +40,6 @@ class Server:
                         if any(name in s for s in players):
                             print "handled"
                             self.handleCommands(text[text.index(">") + 3:])
-                else:
-                    self.server.stdin.write("say " + text)
             time.sleep(0.01)
 
     # Writes to the console
@@ -121,8 +119,6 @@ class HttpServer:
             pass
         self.serverHttp.server_close()
 
-
-# server = Server()
 
 if __name__ == "__main__":
     b = HttpServer()
