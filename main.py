@@ -103,8 +103,9 @@ class HttpHandler(BaseHTTPServer.BaseHTTPRequestHandler):
         self.url = urlparse(self.path)
 
         if self.isPassword(self.url.query):
-            page = open("data.txt", 'r')
+            page = open("data.html", 'r')
             self.wfile.write(page.read())
+            print page.read()
             page.close()
             
             self.handleCommands(self.url.path[1:])
