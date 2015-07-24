@@ -101,9 +101,12 @@ class HttpHandler(BaseHTTPServer.BaseHTTPRequestHandler):
         self.url = urlparse(self.path)
 
         if self.isPassword(self.url.query):
-            page = open("data.html", 'r')
-            self.wfile.write(page.read())
-            page.close()
+            if self.url.path == '/':
+                with open("data.html", 'r') as page:
+                    self.wfile.write(page.read())
+            else:
+                with open("redirect.html", 'r') as page:
+                    self.wfile.write(page.read())
 
             self.handleCommands(self.url.path[1:])
         else:
