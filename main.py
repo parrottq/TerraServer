@@ -63,12 +63,14 @@ class Server:
         time.sleep(1)
         self.console(str(world) + "\n\n" + str(self.port) + "\n\n\n")
 
+    # Stop Server
     def stop(self):
         if self.isOn:
             self.server.stdin.write("exit\n")
         self.isOn = False
         time.sleep(2)
 
+    # Is Server On
     def getIsOn(self):
         return self.isOn
 
