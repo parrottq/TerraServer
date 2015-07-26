@@ -1,7 +1,7 @@
 from os import system, remove
 from urllib import urlretrieve
 from zipfile import ZipFile
-from shutil import rmtree
+from shutil import rmtree, move
 
 #with open("zipped.zip", 'w') as zipfile:
 #    zipfile.write(urlopen("https://github.com/parrottq/TerraServer/archive/Update.zip").read())
@@ -13,4 +13,8 @@ with ZipFile(open("zipped.zip", 'rb')) as zipper:
 
 remove("zipped.zip")
 
-rmtree("TerraServer-Update")
+remove("TerraServer-Update\\start.py")
+
+move("TerraServer-Update", "")
+
+# rmtree("TerraServer-Update/", True)
