@@ -5,6 +5,8 @@ import threading
 import subprocess
 import BaseHTTPServer
 from urlparse import urlparse
+from os import path, getcwd
+from shutil import copy, rmtree
 
 
 # Terraria Server controller
@@ -63,12 +65,14 @@ class Server:
         time.sleep(1)
         self.console(str(world) + "\n\n" + str(self.port) + "\n\n\n")
 
+    # Stop Server
     def stop(self):
         if self.isOn:
             self.server.stdin.write("exit\n")
         self.isOn = False
         time.sleep(2)
 
+    # Is Server On
     def getIsOn(self):
         return self.isOn
 
@@ -123,6 +127,14 @@ class HttpServer:
         self.serverHttp.server_close()
 
 
-if __name__ == "__main__":
-    b = HttpServer()
-    b.start()
+def update():
+    if path.isdir("TerraServer-Update"):
+        copy("TerraServer-Update\\start.py", getcwd())
+        rmtree("TerraServer-Update", True)
+    else:
+        print "Not updated"
+
+
+update()
+b = HttpServer()
+b.start()
