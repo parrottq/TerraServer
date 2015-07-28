@@ -16,6 +16,7 @@ remove("zipped.zip")
 listoffiles = listdir(getcwd())
 listoffiles.remove("TerraServer-Update")
 listoffiles.remove("start.py")
+listoffiles.remove(".git")
 for e in listoffiles:
     print e
     if path.isdir(e):
