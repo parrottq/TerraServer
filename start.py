@@ -24,7 +24,6 @@ try:
 except ValueError:
     pass
 for e in listoffiles:
-    print e
     if path.isdir(e):
         rmtree(e)
     else:
@@ -36,6 +35,6 @@ for e in listofupdates:
     try:
         move("TerraServer-Update\\" + e, getcwd())
     except Exception:
-        print e
+        pass
 
 import main
