@@ -126,10 +126,13 @@ class HttpServer:
             pass
         self.serverHttp.server_close()
 
+
 def update():
-    if path.exists("TerraServer-Update"):
+    if path.isdir("TerraServer-Update"):
         copy("TerraServer-Update\\start.py", getcwd())
         rmtree("TerraServer-Update", True)
+    else:
+        print "Not updated"
 
 
 if __name__ == "__main__":
