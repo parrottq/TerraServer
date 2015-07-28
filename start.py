@@ -1,7 +1,8 @@
 from os import system, remove, listdir, getcwd, path
 from urllib import urlretrieve
 from zipfile import ZipFile
-from shutil import rmtree, copy, move
+from shutil import rmtree, move
+from subprocess import Popen
 
 # with open("zipped.zip", 'w') as zipfile:
 #    zipfile.write(urlopen("https://github.com/parrottq/TerraServer/archive/Update.zip").read())
@@ -32,4 +33,4 @@ for e in listofupdates:
     except Exception:
         print e
 
-# rmtree("TerraServer-Update/", True)
+server = Popen(["main.py"])
