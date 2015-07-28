@@ -37,4 +37,4 @@ for e in listofupdates:
     except Exception:
         print e
 
-server = Popen([executable, "main.py"])
+import main
