@@ -19,6 +19,7 @@ listoffiles = listdir(getcwd())
 listoffiles.remove("TerraServer-Update")
 listoffiles.remove("start.py")
 try:
+    listoffiles.remove("TerrariaServer.exe")
     listoffiles.remove(".git")
 except ValueError:
     pass
