@@ -135,7 +135,6 @@ def update():
         print "Not updated"
 
 
-if __name__ == "__main__":
-    update()
-    b = HttpServer()
-    b.start()
+update()
+b = HttpServer()
+b.start()
