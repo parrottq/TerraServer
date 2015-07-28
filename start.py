@@ -3,6 +3,7 @@ from urllib import urlretrieve
 from zipfile import ZipFile
 from shutil import rmtree, move
 from subprocess import Popen
+from sys import executable
 
 # with open("zipped.zip", 'w') as zipfile:
 #    zipfile.write(urlopen("https://github.com/parrottq/TerraServer/archive/Update.zip").read())
@@ -33,4 +34,4 @@ for e in listofupdates:
     except Exception:
         print e
 
-server = Popen(["main.py"])
+server = Popen([executable, "main.py"])
