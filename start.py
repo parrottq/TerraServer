@@ -4,7 +4,7 @@ from zipfile import ZipFile
 from shutil import rmtree, move
 
 print "Getting latest version"
-urlretrieve("https://github.com/parrottq/TerraServer/archive/Update.zip", "zipped.zip")
+urlretrieve("https://github.com/parrottq/TerraServer/archive/master.zip", "zipped.zip")
 
 print "Extracting"
 with ZipFile(open("zipped.zip", 'rb')) as zipper:
@@ -14,7 +14,7 @@ remove("zipped.zip")
 
 print "Removing old files"
 listoffiles = listdir(getcwd())
-listoffiles.remove("TerraServer-Update")
+listoffiles.remove("TerraServer-master")
 listoffiles.remove("start.py")
 try:
     listoffiles.remove("TerrariaServer.exe")
@@ -28,11 +28,11 @@ for e in listoffiles:
         remove(e)
 
 print "Replacing with new files"
-listofupdates = listdir("TerraServer-Update")
+listofupdates = listdir("TerraServer-master")
 listofupdates.remove("start.py")
 for e in listofupdates:
     try:
-        move("TerraServer-Update\\" + e, getcwd())
+        move("TerraServer-master\\" + e, getcwd())
     except Exception:
         pass
 

@@ -128,9 +128,9 @@ class HttpServer:
 
 
 def update():
-    if path.isdir("TerraServer-Update"):
-        copy("TerraServer-Update\\start.py", getcwd())
-        rmtree("TerraServer-Update", True)
+    if path.isdir("TerraServer-master"):
+        copy("TerraServer-master\\start.py", getcwd())
+        rmtree("TerraServer-master", True)
     else:
         print "Not updated"
 
