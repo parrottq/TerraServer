@@ -23,7 +23,7 @@ class Server:
                 if self.getIsOn():
                     self.stop()
             if command[6] != 'n' and command[6] != 'd':
-                self.start(command[6:])
+                self.start(command[6:].replace("-", " "))
         else:
             self.console(command)
 
