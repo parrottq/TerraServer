@@ -23,7 +23,7 @@ class Server:
                 if self.getIsOn():
                     self.stop()
             if command[6] != 'n' and command[6] != 'd':
-                self.start(command[6:].replace("-", " "))
+                self.start(command[6:])
         else:
             self.console(command)
 
@@ -48,7 +48,7 @@ class Server:
     def console(self, command):
         if "exit" in command:
             self.isOn = False
-        self.server.stdin.write(command + "\n")
+        self.server.stdin.write(command.replace("-", " ") + "\n")
 
     # Starts server
     def start(self, world):
