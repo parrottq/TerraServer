@@ -48,7 +48,7 @@ class Server:
     def console(self, command):
         if "exit" in command:
             self.isOn = False
-        self.server.stdin.write(command.replace("-", " ") + "\n")
+        self.server.stdin.write(command.replace("*", " ") + "\n")
 
     # Starts server
     def start(self, world):
